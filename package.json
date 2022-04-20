@@ -1,0 +1,13 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  },
+  "private": "true",
+  "workspaces": [
+    "packages/*"
+  ]
+}

@@ -1,0 +1,22 @@
+version: '3'
+services:
+    db:
+        image: mongo
+        container_name: db
+        ports:
+            - "27017:27017"
+        volumes:
+            - ./packages/db:/data/db
+        restart: always
+    front:
+        build: ./packages/front
+        container_name: front
+        ports:
+            - "80:80"
+    back:
+        build: ./packages/back
+        container_name: back
+        ports:
+            - "8080:8080"       
+        depends_on:
+            - db
